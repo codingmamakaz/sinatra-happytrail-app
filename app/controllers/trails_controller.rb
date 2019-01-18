@@ -1,7 +1,11 @@
 class TrailsController < ApplicationController
 
     get '/trails' do
-        erb :'trails/trails'
+        if logged_in?
+            erb :'trails/trails'
+        else
+            redirect '/login'
+        end
     end
 
 end
