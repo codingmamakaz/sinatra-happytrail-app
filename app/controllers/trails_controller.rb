@@ -9,4 +9,13 @@ class TrailsController < ApplicationController
         end
     end
 
+    get '/trails/new' do
+        if logged_in?
+            @user = User.find_by_id(session[:user_id])
+            erb :'trails/new'
+        else
+            redirect '/login'
+        end
+    end
+
 end
