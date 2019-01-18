@@ -29,7 +29,6 @@ class UsersController < ApplicationController
 
     post '/login' do
         user = User.find_by(:username => params[:username])
-        user.authenticate(params[:password])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
             redirect "/trails"
@@ -38,6 +37,14 @@ class UsersController < ApplicationController
         end
     end
 
+    get '/logout' do
+        if logged_in?
+          session.destroy
+          redirect to '/login'
+        else
+          redirect to '/'
+        end
+    end
     
 end
 
