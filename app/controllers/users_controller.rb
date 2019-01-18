@@ -1,17 +1,16 @@
 class UsersController < ApplicationController
 
     get '/signup' do
-        # if !logged_in?
-        #   erb  :'/users/create_user'
-        # else
-        #   redirect '/trails'
-        # end
-        erb  :'/users/create_user'
+        if !logged_in?
+          erb  :'/users/create_user'
+        else
+          redirect '/trails'
+        end
     end
 
     post '/signup' do 
         if params[:username] == "" || params[:email] == "" || params[:password] == ""
-          redirect to '/signup'
+          redirect '/signup'
         else
           @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
           @user.save
@@ -26,7 +25,17 @@ class UsersController < ApplicationController
         else
           redirect '/trails'
         end
-        erb :'users/login'
+    end
+
+    post '/login' do
+        user = User.find_by(:username => params[:username])
+        user.authenticate(params[:password])
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+            redirect "/trails"
+        else
+            redirect to '/signup'
+        end
     end
 
     
@@ -34,4 +43,4 @@ end
 
 
 
-#work on post "/signup"
+
