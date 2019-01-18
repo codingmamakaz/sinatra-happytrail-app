@@ -1,0 +1,23 @@
+<h2> Log a new trail</h2>
+
+<form action="/trails" method="POST">
+  <label>Trail Name: </label> 
+  <input type="text" name="trail[name]" id="Name">
+
+  <br>
+
+  <label>Length: </label> 
+  <input type="text" name="trail[length]" id="Length">
+
+  <br>
+
+  <label>Bathroom: </label> 
+  <label for="bathroom">Yes </label><input type="radio" name="trail[bathroom]" value="Yes" />
+  <label for="bathroom">No </label><input type="radio" name="trail[bathroom]" value="No" />
+
+  <br>
+
+  <label>Cell Reception: </label> 
+  <label for="cell reception">Yes </label><input type="radio" name="trail[cell_reception]" value="Yes" />
+  <label for="cell reception">No </label><input type="radio" name="trail[cell_reception]" value="No" />
+</form>
