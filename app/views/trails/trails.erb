@@ -2,6 +2,12 @@
 <a href="/trails/new">Log a new trail</a>
 <br>
 <%# I want to show links to all the trails the user logged %>
+<h2>Trails you've visited</h2>
+<ul>
+    <% @trails.each do |trail| %>
+        <li><%= trail.name %></li>
+    <% end %>
+</ul>
 <br>
 
 <a href="/logout">Logout</a>
