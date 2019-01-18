@@ -18,4 +18,8 @@ class TrailsController < ApplicationController
         end
     end
 
+    post 'trails' do
+        binding.pry
+    end
+
 end
