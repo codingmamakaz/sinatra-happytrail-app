@@ -1,12 +1,12 @@
 <p> Welcome to Happy trails, <%= @user.username%>!</p>
-
-<a href="/trails/new">Log a new trail</a>
+<p>Track your journey here</p>
+<a href="/trails/new">Add a new trail</a>
 <br>
 <br>
 <h2>Trails you've visited</h2>
 <ul>
     <% @trails.each do |trail| %>
-        <li><%= trail.name %></li>
+        <li><a href="/trails/<%= trail.slug%>"><%= trail.name %></a></li>
     <% end %>
 </ul>
 <br>

@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20190117045450) do
     t.string   "name"
     t.integer  "user_id"
     t.integer  "length"
-    t.boolean  "bathroom",       null: false
-    t.boolean  "cell_reception", null: false
+    t.string   "bathroom"
+    t.string   "cell_reception"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
