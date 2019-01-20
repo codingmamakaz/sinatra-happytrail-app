@@ -7,4 +7,12 @@
 <h3>Is there a cell reception?: <%= @trail.cell_reception %> </h3>
 <br>
 <br>
+<h3>Category/Categories: </h3>
+<% @trail.categories.each do |category| %>
+  <ul>  
+    <li>*<%= category.name %></li>    
+  </ul>
+<% end %>
+<br>
+<br>
 <a href="/trails">See all the trails again</a>

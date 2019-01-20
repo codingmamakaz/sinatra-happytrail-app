@@ -28,7 +28,7 @@ class TrailsController < ApplicationController
             @trail.categories << obj
         end
         @trail.save
-        redirect '/trails/#{@trail.slug}'
+        redirect '/trails'
     end
 
     get '/trails/:slug' do
