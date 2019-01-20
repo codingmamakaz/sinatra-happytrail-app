@@ -28,9 +28,8 @@
   <label>Choose an existing category/categories:</label>
  
   <br>
- 
   <% Category.all.each do |category| %>
-  <input type="checkbox" name="category[]">
+  <input type="checkbox" name="categories[]" value=<%= category.id %>>
   <%= category.name %>
   <% end %>
 

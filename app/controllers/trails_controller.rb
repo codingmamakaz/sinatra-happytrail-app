@@ -20,9 +20,15 @@ class TrailsController < ApplicationController
     end
 
     post '/trails' do
-        @trail = Trail.create(params["trail"])
+        @trail = Trail.create(params[:trail])
         @trails = Trail.all.each{|trail|trail.name}
-        redirect '/trails'
+        @trail.category_ids = params[:categories]
+        if params["category"]["name"] != nil 
+            obj = Category.find_by(name: params[:category][:name]) || Category.create(name: params[:category][:name])
+            @trail.categories << obj
+        end
+        @trail.save
+        redirect '/trails/#{@trail.slug}'
     end
 
     get '/trails/:slug' do
