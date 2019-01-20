@@ -13,11 +13,6 @@ class TrailsController < ApplicationController
     get '/trails/new' do
         if logged_in?
             @user = User.find_by_id(session[:user_id])
-            @choices = {
-            'HAM' => 'Hamburger',
-            'PIZ' => 'Pizza',
-            'CUR' => 'Curry',
-        }
             erb :'trails/new'
         else
             redirect '/login'
@@ -32,7 +27,6 @@ class TrailsController < ApplicationController
 
     get '/trails/:slug' do
         @trail = Trail.find_by_slug(params[:slug])
-        # binding.pry
         erb :'trails/show'
     end
 

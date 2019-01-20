@@ -24,6 +24,27 @@
 
   <br>
   <br>
+
+  <label>Choose an existing category/categories:</label>
+ 
+  <br>
+ 
+  <% Category.all.each do |category| %>
+  <input type="checkbox" name="category[]">
+  <%= category.name %>
+  <% end %>
+
+  <br>
+  <br>
+
+  <label>and/or, create a new category:</label>
+
+  <br>
+  <label>Category:</label>
+  <input type="text" name="category[name]" >
+
+  <br></br>
+  <br>
   <input type="submit" id="submit" value="Log">
 </form>
 <br>
