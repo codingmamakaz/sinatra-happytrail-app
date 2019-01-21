@@ -32,8 +32,12 @@ class TrailsController < ApplicationController
     end
 
     get '/trails/:slug' do
-        @trail = Trail.find_by_slug(params[:slug])
-        erb :'trails/show'
+        if logged_in?
+            @trail = Trail.find_by_slug(params[:slug])
+            erb :'trails/show'
+        else
+            redirect '/login'
+        end
     end
 
 end
