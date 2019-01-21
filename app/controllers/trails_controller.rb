@@ -1,22 +1,17 @@
 class TrailsController < ApplicationController
 
     get '/trails' do
-        if logged_in?
-            @user = User.find_by_id(session[:user_id])
-            @trails = Trail.all
-            erb :'trails/trails'
-        else
-            redirect '/login'
-        end
+        redirect_if_not_logged_in
+        
+        @user = User.find_by_id(session[:user_id])
+        @trails = Trail.all
+        erb :'trails/trails'
     end
 
     get '/trails/new' do
-        if logged_in?
-            @user = User.find_by_id(session[:user_id])
-            erb :'trails/new'
-        else
-            redirect '/login'
-        end
+        redirect_if_not_logged_in
+        @user = User.find_by_id(session[:user_id])
+        erb :'trails/new'
     end
 
     post '/trails' do
@@ -32,12 +27,9 @@ class TrailsController < ApplicationController
     end
 
     get '/trails/:slug' do
-        if logged_in?
-            @trail = Trail.find_by_slug(params[:slug])
-            erb :'trails/show'
-        else
-            redirect '/login'
-        end
+        redirect_if_not_logged_in
+        @trail = Trail.find_by_slug(params[:slug])
+        erb :'trails/show'     
     end
 
 end
