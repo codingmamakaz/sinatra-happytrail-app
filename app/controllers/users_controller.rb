@@ -20,8 +20,12 @@ class UsersController < ApplicationController
       end
 
     get '/login' do 
-        redirect_if_not_logged_in
-        redirect '/trails'
+        if !logged_in?          
+          erb :'users/login'
+        else	       
+          redirect '/trails'	          
+        end	       
+        erb :'users/login'
     end
 
     post '/login' do

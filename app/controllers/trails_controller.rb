@@ -38,5 +38,17 @@ class TrailsController < ApplicationController
         erb :'trails/edit'
     end
 
+    patch '/trails/:slug' do
+        @trail = Trail.find_by_slug(params[:slug])
+        @trail.update(params[:trail])
+        @trail.category_ids = params["categories"]
+        if params["category"]["name"] != nil 
+            obj = Category.find_by(name: params[:category][:name]) || Category.create(name: params[:category][:name])
+            @trail.categories << obj
+        end
+        @trail.save
+        redirect "/trails/#{@trail.slug}"
+    end
+
 
 end
