@@ -49,7 +49,7 @@ class UsersController < ApplicationController
     end
 
     patch '/user' do
-      if params[:password] == ""
+      if params[:user][:password] == ""
         redirect '/user/edit'
       end
       @user = User.find_by(:id => session[:user_id])
