@@ -42,7 +42,6 @@ class TrailsController < ApplicationController
         else
             redirect to '/trails'
         end
-       
     end
 
     patch '/trails/:slug' do
@@ -62,9 +61,9 @@ class TrailsController < ApplicationController
     delete '/trails/:slug/delete' do
         redirect_if_not_logged_in
         @trail = Trail.find_by_slug(params[:slug])
-        @trail.delete
-        redirect '/trails'
+        if @trail && @trail.user == current_user
+            @trail.delete
+        end
+        redirect to '/trails'
     end
-
-
 end
