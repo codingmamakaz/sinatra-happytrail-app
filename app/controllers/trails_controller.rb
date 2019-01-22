@@ -1,8 +1,7 @@
 class TrailsController < ApplicationController
 
     get '/trails' do
-        redirect_if_not_logged_in
-        
+        redirect_if_not_logged_in   
         @user = current_user
         @trails = Trail.all
         erb :'trails/trails'
@@ -18,8 +17,8 @@ class TrailsController < ApplicationController
         if params[:trail][:name] == "" || params[:trail][:length] == ""
             redirect :'/trails/new'
         end
-        @trail = Trail.create(params[:trail])
-        @trails = Trail.all.each{|trail|trail.name}
+        @trail = current_user.trails.create(params[:trail])
+        @trails = current_user.trails.all.each{|trail|trail.name}
         @trail.category_ids = params[:categories]
         if params["category"]["name"] != "" 
             obj = Category.find_by(name: params[:category][:name]) || Category.create(name: params[:category][:name])
@@ -38,7 +37,12 @@ class TrailsController < ApplicationController
     get '/trails/:slug/edit' do
         redirect_if_not_logged_in
         @trail = Trail.find_by_slug(params[:slug])
-        erb :'trails/edit'
+        if @trail && @trail.user == current_user
+            erb :'trails/edit'
+        else
+            redirect to '/trails'
+        end
+       
     end
 
     patch '/trails/:slug' do
