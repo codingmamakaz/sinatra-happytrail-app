@@ -3,7 +3,7 @@ class CreateTrails < ActiveRecord::Migration
     create_table :trails do |t|
       t.string :name
       t.integer :user_id
-      t.integer :length
+      t.float :length
       t.string :bathroom
       t.string :cell_reception
       t.timestamps null: false

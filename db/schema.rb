@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20190117045450) do
   create_table "trails", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.integer  "length"
+    t.float    "length"
     t.string   "bathroom"
     t.string   "cell_reception"
     t.datetime "created_at",     null: false

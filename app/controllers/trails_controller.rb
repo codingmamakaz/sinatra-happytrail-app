@@ -42,6 +42,7 @@ class TrailsController < ApplicationController
     end
 
     patch '/trails/:slug' do
+        redirect_if_not_logged_in
         @trail = Trail.find_by_slug(params[:slug])
         @trail.update(params[:trail])
         @trail.category_ids = params["categories"]
