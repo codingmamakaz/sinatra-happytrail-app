@@ -1,7 +1,7 @@
 <h2>Categories</h2>
-<ul>
+<ul style="list-style-type:disc">
     <% @categories.each do |categories| %>
-        <li><a href="/categories/<%= categories.slug%>"><%= categories.name %></a></li>
+        <li><%= categories.name %></li>
     <% end %>
 </ul>
 <br>
