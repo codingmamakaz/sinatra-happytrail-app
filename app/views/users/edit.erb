@@ -7,15 +7,15 @@
 
   <label>Name:</label>
   <br>
-  <input type="text" name="username" value="<%= @user.username %>">
+  <input type="text" name="user[username]" value="<%= @user.username %>">
   <br>
   <label>Email:</label>
   <br>
-  <input type="text" name="email" value="<%= @user.email %>">
+  <input type="text" name="user[email]" value="<%= @user.email %>">
   <br>
   <label>Password:</label>
   <br>
-  <input type="text" name="password" value="<%= @user.password %>">
+  <input type="text" name="user[password]" value="<%= @user.password %>">
   <br>
   <input type="submit" id="submit" value="Save">
 </form>

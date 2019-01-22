@@ -12,7 +12,7 @@ class UsersController < ApplicationController
         if params[:username] == "" || params[:email] == "" || params[:password] == ""
           redirect '/signup'
         else
-          @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
+          @user = User.new(params[:user])
           @user.save
           session[:user_id] = @user.id
           redirect to '/trails'
@@ -34,13 +34,28 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect '/trails'
         else
-            redirect to '/signup'
+            redirect '/signup'
         end
     end
 
     get '/user/edit' do
       @user = User.find_by(:id => session[:user_id])
       erb :'users/edit'
+    end
+
+    get '/user' do
+      @user = User.find_by(:id => session[:user_id])
+      erb :'users/user'
+    end
+
+    patch '/user' do
+      if params[:password] == ""
+        redirect '/user/edit'
+      end
+      @user = User.find_by(:id => session[:user_id])
+      @user.update(params[:user])
+      @user.save
+      redirect '/user'
     end
 
     get '/logout' do
