@@ -4,7 +4,7 @@ class Trail < ActiveRecord::Base
     has_many :categories, through: :trail_categories
 
     def slug
-        name.downcase.gsub(" ","-")
+        name.downcase.tr(' ', '-')
     end
     
     def self.find_by_slug(slug)
