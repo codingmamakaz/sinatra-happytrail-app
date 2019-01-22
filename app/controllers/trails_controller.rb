@@ -21,7 +21,7 @@ class TrailsController < ApplicationController
         @trail = Trail.create(params[:trail])
         @trails = Trail.all.each{|trail|trail.name}
         @trail.category_ids = params[:categories]
-        if params["category"]["name"] != nil 
+        if params["category"]["name"] != "" 
             obj = Category.find_by(name: params[:category][:name]) || Category.create(name: params[:category][:name])
             @trail.categories << obj
         end
@@ -38,26 +38,15 @@ class TrailsController < ApplicationController
     get '/trails/:slug/edit' do
         redirect_if_not_logged_in
         @trail = Trail.find_by_slug(params[:slug])
-        # @original_name = @trail.name
-        # @original_length = @trail.length
-
-        if params[:trail][:name] == ""
-            params[:trail][:name] = @original_name
-        end
-
-        if params[:trail][:length] == ""
-            params[:trail][:length] = @original_length
-        end
         erb :'trails/edit'
     end
 
     patch '/trails/:slug' do
         @trail = Trail.find_by_slug(params[:slug])
-
         @trail.update(params[:trail])
         @trail.category_ids = params["categories"]
 
-        if params["category"]["name"] != nil 
+        if params["category"]["name"] != "" 
             obj = Category.find_by(name: params[:category][:name]) || Category.create(name: params[:category][:name])
             @trail.categories << obj
         end

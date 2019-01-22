@@ -1,5 +1,4 @@
 <h2> Log a new trail</h2>
-
 <form action="/trails" method="POST">
   <label>Trail Name: </label> 
   <input type="text" name="trail[name]" id="Name">
@@ -26,7 +25,6 @@
   <br>
 
   <label>Choose an existing category/categories:</label>
- 
   <br>
   <% Category.all.each do |category| %>
   <input type="checkbox" name="categories[]" value=<%= category.id %>>

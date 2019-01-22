@@ -5,10 +5,10 @@
 <input id="hidden" type="hidden" name="_method" value="PATCH">
 
   <label>Trail Name: </label> 
-  <input type="text" name="trail[name]" id="Name">
+  <input type="text" name="trail[name]" id="Name" value="<%= @trail.name %>">
 
   <br>
-  <label>Length: <input type="text" name="trail[length]" id="Length"> miles</label> 
+  <label>Length: <input type="text" name="trail[length]" id="Length" value="<%= @trail.length %>"> miles</label> 
 
   <br>
 
