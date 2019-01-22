@@ -54,5 +54,12 @@ class TrailsController < ApplicationController
         redirect ("/trails/#{@trail.slug}")
     end
 
+    delete '/trails/:slug/delete' do
+        redirect_if_not_logged_in
+        @trail = Trail.find_by_slug(params[:slug])
+        @trail.delete
+        redirect '/trails'
+    end
+
 
 end
