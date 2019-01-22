@@ -32,10 +32,15 @@ class UsersController < ApplicationController
         @user = User.find_by(:username => params[:username])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect "/trails"
+            redirect '/trails'
         else
             redirect to '/signup'
         end
+    end
+
+    get '/user/edit' do
+      @user = User.find_by(:id => session[:user_id])
+      erb :'users/edit'
     end
 
     get '/logout' do
