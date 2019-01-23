@@ -1,1 +1,9 @@
-<h3>usre-trail page</h3>
+<h3>Trail(s) you have added</h3>
+<br>
+<ul>
+<% @user.trails.all.each do |trail| %>
+<li><a href="/trails/<%= trail.slug%>"><%= trail.name %></a></li>
+<% end %>
+</ul>
+<br>
+<a href="/trails">Home</a>
