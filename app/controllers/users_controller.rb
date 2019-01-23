@@ -16,6 +16,7 @@ class UsersController < ApplicationController
           @user = User.new(params[:user])
           @user.save
           session[:user_id] = @user.id
+          flash[:message] = "Welcome to Happy Trails, #{@user.username}!"
           redirect to '/trails'
         end
       end
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
         @user = User.find_by(:username => params[:username])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
+            flash[:message] = "Welcome back, #{@user.username}!"
             redirect '/trails'
         else
             flash[:errors] = "Your credentials were invalid. Please sign up or try again."

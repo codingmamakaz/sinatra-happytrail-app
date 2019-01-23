@@ -15,6 +15,7 @@ class TrailsController < ApplicationController
 
     post '/trails' do
         if params[:trail][:name] == "" || params[:trail][:length] == ""
+            flash[:errors] = "Make sure to fill both name and length fields."
             redirect :'/trails/new'
         end
         @trail = current_user.trails.create(params[:trail])
@@ -25,6 +26,7 @@ class TrailsController < ApplicationController
             @trail.categories << obj
         end
         @trail.save
+        flash[:message] = "Successfully added a new trail!"
         redirect '/trails'
     end
 
@@ -55,6 +57,7 @@ class TrailsController < ApplicationController
             @trail.categories << obj
         end
         @trail.save
+        flash[:message] = "Successfully edited a trail."
         redirect ("/trails/#{@trail.slug}")
     end
 
@@ -64,6 +67,7 @@ class TrailsController < ApplicationController
         if @trail && @trail.user == current_user
             @trail.delete
         end
+        flash[:message] = "Successfully deleted a trail."
         redirect to '/trails'
     end
 end
