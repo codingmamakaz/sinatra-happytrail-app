@@ -11,7 +11,10 @@
 </ul>
 <br>
 <br>
-<a href="/trails/user_trail">See all the trails you added</a>
+<% if @user.trails != [] %>
+  <a href="/trails/user_trail">See all the trails you added</a>
+<% end %>
+
 <br>
 <br>
 <a href="/user/edit">Edit User Information</a>

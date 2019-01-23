@@ -32,8 +32,6 @@ class TrailsController < ApplicationController
 
     get '/trails/user_trail' do
         redirect_if_not_logged_in
-        # binding.pry
-        # @user = User.find_by_id(params[:id])
         @user = current_user
         erb :'trails/user_trail'
     end
