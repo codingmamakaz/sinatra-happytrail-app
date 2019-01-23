@@ -48,6 +48,7 @@ class TrailsController < ApplicationController
         if @trail && @trail.user == current_user
             erb :'trails/edit'
         else
+            flash[:errors] = "Sorry you can't edit this trail."
             redirect to '/trails'
         end
     end

@@ -27,7 +27,6 @@ class UsersController < ApplicationController
         else	  
           redirect '/trails'	          
         end	       
-        erb :'users/login'
     end
 
     post '/login' do
