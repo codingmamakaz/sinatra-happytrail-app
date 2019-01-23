@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
     post '/signup' do 
         if params[:username] == "" || params[:email] == "" || params[:password] == ""
+          flash[:errors] = "Please fill all the fields."
           redirect '/signup'
         else
           @user = User.new(params[:user])
@@ -34,6 +35,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect '/trails'
         else
+            flash[:errors] = "Your credentials were invalid. Please sign up or try again."
             redirect '/login'
         end
     end
@@ -50,6 +52,7 @@ class UsersController < ApplicationController
 
     patch '/user' do
       if params[:user][:password] == ""
+        flash[:errors] = "Please enter old or new password."
         redirect '/user/edit'
       end
       @user = User.find_by(:id => session[:user_id])
