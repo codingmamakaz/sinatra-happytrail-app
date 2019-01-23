@@ -34,7 +34,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect '/trails'
         else
-            redirect '/signup'
+            redirect '/login'
         end
     end
 
