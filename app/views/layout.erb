@@ -16,14 +16,14 @@
   <body>
     <div class="wrapper">
 
-        <% if flash[:errors] %>
-          <h3><%= flash[:errors] %></h3>
-        <% end %>
-
-
         <% if flash[:message] %>
-          <h3><%= flash[:message] %></h3>
+          <h3 style="color: lightseagreen;"><%= flash[:message] %></h3>
         <% end %>
+
+        <% if flash[:errors] %>
+          <h3 style="color: indianred;"><%= flash[:errors] %></h3>
+        <% end %>
+
 
 
         <%= yield %>
