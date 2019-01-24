@@ -10,17 +10,17 @@
 <h3>Category/Categories: </h3>
 <% @trail.categories.each do |category| %>
   <ul>  
-    <li>*<%= category.name %></li>    
+    <h4><li><%= category.name %></li></h4>    
   </ul>
 <% end %>
 <br>
 <br>
-<a href="/trails">Go back to trails</a>
+<a href="/trails" class="btn btn-lg btn-info link-button">Go back to trails</a>
 <br>
 <br>
 
 <% if @trail.user == current_user %>
-  <a href="/trails/<%=@trail.slug%>/edit">Edit Trail </a> 
+  <a href="/trails/<%=@trail.slug%>/edit" class="btn btn-lg btn-info link-button">Edit Trail </a> 
 <% end %>
 
 
@@ -29,7 +29,7 @@
 <% if @trail.user == current_user %>
   <form method="post" action="/trails/<%=@trail.slug%>/delete">
     <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Trail">
+    <input type="submit" value="Delete Trail" class="btn btn-lg btn-info delete">
   </form>
 <% end %>
 

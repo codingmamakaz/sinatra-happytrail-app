@@ -13,27 +13,27 @@
   <br>
 
   <label>Bathroom: </label> 
-  <label for="bathroom"> Yes </label><input type="radio" name="trail[bathroom]" value="Yes" <%='checked' if @trail.bathroom == "Yes" %>/>
-  <label for="bathroom"> No </label><input type="radio" name="trail[bathroom]" value="No" <%='checked' if @trail.bathroom == "No" %>/>
-  <label for="bathroom"> Unknown </label><input type="radio" name="trail[bathroom]" value="Unknown" <%='checked' if @trail.bathroom == "Unknown" %>/>
+  <label for="bathroom"> Yes <input type="radio" name="trail[bathroom]" value="Yes" <%='checked' if @trail.bathroom == "Yes" %>/></label>
+  <label for="bathroom"> No <input type="radio" name="trail[bathroom]" value="No" <%='checked' if @trail.bathroom == "No" %>/></label>
+  <label for="bathroom"> Unknown <input type="radio" name="trail[bathroom]" value="Unknown" <%='checked' if @trail.bathroom == "Unknown" %>/></label>
   
   <br>
 
   <label>Cell Reception: </label> 
-  <label for="cell reception"> Yes </label><input type="radio" name="trail[cell_reception]" value="Yes" <%='checked' if @trail.cell_reception == "Yes" %>/>
-  <label for="cell reception"> No </label><input type="radio" name="trail[cell_reception]" value="No" <%='checked' if @trail.cell_reception == "No" %> />
-  <label for="cell reception"> Unknown </label><input type="radio" name="trail[cell_reception]" value="Unknown" <%='checked' if @trail.cell_reception == "Unknown"%> />
+  <label for="cell reception"> Yes <input type="radio" name="trail[cell_reception]" value="Yes" <%='checked' if @trail.cell_reception == "Yes" %>/></label>
+  <label for="cell reception"> No <input type="radio" name="trail[cell_reception]" value="No" <%='checked' if @trail.cell_reception == "No" %> /></label>
+  <label for="cell reception"> Unknown <input type="radio" name="trail[cell_reception]" value="Unknown" <%='checked' if @trail.cell_reception == "Unknown"%> /></label>
 
   <br>
   <br>
 
-  <label>Choose an existing category/categories:</label>
- 
+  <label>Choose an existing category/categories:
+  <br>
   <br>
   <% Category.all.each do |category| %>
   <input type="checkbox" name="categories[]" value="<%= category.id %>" <%='checked' if @trail.categories.include?(category) %>>
   <%= category.name %>
-  <% end %>
+  <% end %></label>
 
   <br>
   <br>
@@ -42,8 +42,8 @@
 
   <br></br>
   <br>
-  <input type="submit" id="submit" value="Save">
+  <input type="submit" id="submit" class="btn btn-lg btn-info" value="Save">
 </form>
 <br>
 <br>
-<a href="/trails">Home</a>
+<a href="/trails" class="btn btn-lg btn-info link-button">Home</a>

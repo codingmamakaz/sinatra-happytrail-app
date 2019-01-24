@@ -1,5 +1,12 @@
+<nav class="nav">
+  <a class="nav-link active" href="#">Active</a>
+  <a class="nav-link" href="/logout" class="btn btn-lg btn-info link-button">Link</a>
+  <a class="nav-link" href="#">Link</a>
+  <a class="nav-link disabled" href="#">Disabled</a>
+</nav>
+
 <h2> Happy Trails!</h2>
-<a href="/trails/new">Add a new trail here</a>
+<p><a href="/trails/new" class="btn btn-lg btn-info link-button">Add a new trail here</a></p>
 
 <br>
 <br>
@@ -12,12 +19,12 @@
 <br>
 <br>
 <% if @user.trails != [] %>
-  <a href="/trails/user_trail">See all the trails you added</a>
+  <a href="/trails/user_trail" class="btn btn-lg btn-info link-button">See all the trails you added</a>
 <% end %>
 
 <br>
 <br>
-<a href="/user/edit">Edit User Information</a>
+<a href="/user/edit" class="btn btn-lg btn-info link-button">Edit User Information</a>
 <br>
 <br>
-<a href="/logout">Logout</a>
+<a href="/logout" class="btn btn-lg btn-info link-button">Logout</a>

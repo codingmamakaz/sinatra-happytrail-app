@@ -1,35 +1,34 @@
 <h2> Log a new trail</h2>
 <form action="/trails" method="POST">
-  <label>Trail Name: </label> 
-  <input type="text" name="trail[name]" id="Name">
+  <label>Trail Name: <input type="text" name="trail[name]" id="Name"></label>
 
   <br>
 
-  <label>Length: <input type="text" name="trail[length]" id="Length"> miles</label> 
+  <label>Length: <input type="text" name="trail[length]" id="Length"> miles </label>
 
   <br>
 
   <label>Bathroom: </label> 
-  <label for="bathroom"> Yes </label><input type="radio" name="trail[bathroom]" value="Yes" />
-  <label for="bathroom"> No </label><input type="radio" name="trail[bathroom]" value="No" />
-  <label for="bathroom"> Unknown </label><input type="radio" name="trail[bathroom]" value="Unknown" />
+  <label for="bathroom"> Yes <input type="radio" name="trail[bathroom]" value="Yes" /></label>
+  <label for="bathroom"> No <input type="radio" name="trail[bathroom]" value="No" /></label>
+  <label for="bathroom"> Unknown <input type="radio" name="trail[bathroom]" value="Unknown" /></label>
   
   <br>
 
   <label>Cell Reception: </label> 
-  <label for="cell reception"> Yes </label><input type="radio" name="trail[cell_reception]" value="Yes" />
-  <label for="cell reception"> No </label><input type="radio" name="trail[cell_reception]" value="No" />
-  <label for="cell reception"> Unknown </label><input type="radio" name="trail[cell_reception]" value="Unknown" />
+  <label for="cell reception"> Yes <input type="radio" name="trail[cell_reception]" value="Yes" /></label>
+  <label for="cell reception"> No <input type="radio" name="trail[cell_reception]" value="No" /></label>
+  <label for="cell reception"> Unknown <input type="radio" name="trail[cell_reception]" value="Unknown" /></label>
 
   <br>
   <br>
 
-  <label>Choose an existing category/categories:</label>
+  <label>Choose an existing category/categories:
   <br>
   <% Category.all.each do |category| %>
   <input type="checkbox" name="categories[]" value=<%= category.id %>>
   <%= category.name %>
-  <% end %>
+  <% end %></label>
 
   <br>
   <br>
@@ -37,13 +36,12 @@
   <label>and/or, create a new category:</label>
 
   <br>
-  <label>Category:</label>
-  <input type="text" name="category[name]" >
+  <label>Category: <input type="text" name="category[name]"></label>
 
   <br></br>
   <br>
-  <input type="submit" id="submit" value="Post a trail">
+  <input type="submit" class="btn btn-lg btn-info" id="submit" value="Post a trail">
 </form>
 <br>
 <br>
-<a href="/trails">Home</a>
+<a href="/trails" class="btn btn-lg btn-info link-button" >Home</a>

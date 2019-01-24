@@ -16,7 +16,7 @@
   background: url('/images/ep_naturalwhite.png');
 }
 
-h1, h2, h3, label, a{
+h1, h2, h3, h4, label, a, p{
   color: #3B3355;
   font-family: 'Montserrat', sans-serif;
 }
@@ -46,17 +46,32 @@ h1, h2, h3, label, a{
   border: 10px; 
 }
 
-#signup {
-  padding: 120 px;
-}
-
 footer {
   bottom: 0%;
   text-align: center;
   position: fixed;
-  color: #3B3355;
+  color: #777777;
+  font-family: 'Montserrat', sans-serif;
+}
+/* unvisited link */
+a:link {
+  color: red;
 }
 
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
 .clearfix {
   *zoom: 1;
 }
@@ -6210,6 +6225,7 @@ a.badge:focus {
 .btn.btn-lg.btn-info {
   background: #B5C2B7;
   color: #3B3355;
+  font-weight: bold;
 }
 
 .btn.btn-lg.btn-info:hover {
@@ -6217,3 +6233,29 @@ a.badge:focus {
   transition-duration: 0.4s;
   background-color: #748B75;
 }
+
+.btn.btn-lg.btn-info.link-button {
+  background: #8C93A8;
+  color: #3B3355;
+  font-weight: bold;
+}
+
+.btn.btn-lg.btn-info.link-button:hover {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  background-color: #B5C2B7;
+}
+
+.btn.btn-lg.btn-info.delete {
+  background: #fa8072;
+  color: #3B3355;
+  font-weight: bold;
+}
+
+
+.btn.btn-lg.btn-info.delete:hover {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  background-color: #B5C2B7;
+}
+
