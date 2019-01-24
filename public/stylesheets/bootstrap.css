@@ -16,10 +16,22 @@
   background: url('/images/ep_naturalwhite.png');
 }
 
-h1, h3 {
+h1, h2, h3, label, a{
   color: #3B3355;
   font-family: 'Montserrat', sans-serif;
 }
+
+.wrapper {
+  margin: 30px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
 
 #welcome {
   text-align: center;
@@ -32,6 +44,10 @@ h1, h3 {
   margin-top: 40px;
   margin-bottom: 100px;
   border: 10px; 
+}
+
+#signup {
+  padding: 120 px;
 }
 
 footer {
@@ -6194,4 +6210,10 @@ a.badge:focus {
 .btn.btn-lg.btn-info {
   background: #B5C2B7;
   color: #3B3355;
+}
+
+.btn.btn-lg.btn-info:hover {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  background-color: #748B75;
 }
