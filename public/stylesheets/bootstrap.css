@@ -53,6 +53,10 @@ footer {
   color: #777777;
   font-family: 'Montserrat', sans-serif;
 }
+
+.flash-message {
+  color: #87A388;
+}
 /* unvisited link */
 a:link {
   color: red;
@@ -6235,7 +6239,7 @@ a.badge:focus {
 }
 
 .btn.btn-lg.btn-info.link-button {
-  background: #52B788;
+  background: #87A388;
   color: #483519;
   font-weight: bold;
 }
