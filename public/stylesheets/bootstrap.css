@@ -17,7 +17,7 @@
 }
 
 h1, h2, h3, h4, label, a, p{
-  color: #3B3355;
+  color: #483519;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -6224,7 +6224,7 @@ a.badge:focus {
 
 .btn.btn-lg.btn-info {
   background: #B5C2B7;
-  color: #3B3355;
+  color: #483519;
   font-weight: bold;
 }
 
@@ -6235,8 +6235,8 @@ a.badge:focus {
 }
 
 .btn.btn-lg.btn-info.link-button {
-  background: #8C93A8;
-  color: #3B3355;
+  background: #52B788;
+  color: #483519;
   font-weight: bold;
 }
 
@@ -6248,7 +6248,7 @@ a.badge:focus {
 
 .btn.btn-lg.btn-info.delete {
   background: #fa8072;
-  color: #3B3355;
+  color: #483519;
   font-weight: bold;
 }
 
