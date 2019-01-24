@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20190117045450) do
     t.float    "length"
     t.string   "bathroom"
     t.string   "cell_reception"
+    t.string   "memo"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
