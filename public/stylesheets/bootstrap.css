@@ -7,6 +7,39 @@
  *
  * Designed and built with all the love in the world by @mdo and @fat.
  */
+ body {
+  margin: 0;
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  background: url('/images/ep_naturalwhite.png');
+}
+
+h1, h3 {
+  color: #3B3355;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#welcome {
+  text-align: center;
+  margin-top: 100px;
+  border: 10px; 
+}
+
+#intro {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  border: 10px; 
+}
+
+footer {
+  bottom: 0%;
+  text-align: center;
+  position: fixed;
+  color: #3B3355;
+}
 
 .clearfix {
   *zoom: 1;
@@ -39,6 +72,7 @@
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+
 
 article,
 aside,
@@ -215,20 +249,12 @@ textarea {
     orphans: 3;
     widows: 3;
   }
-  h2,
   h3 {
     page-break-after: avoid;
   }
 }
 
-body {
-  margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  color: #333333;
-  background-color: #ffffff;
-}
+
 
 a {
   color: #0088cc;
@@ -739,10 +765,9 @@ h4,
 h5,
 h6 {
   margin: 10px 0;
-  font-family: inherit;
+  /* font-family: inherit; */
   font-weight: bold;
   line-height: 20px;
-  color: inherit;
   text-rendering: optimizelegibility;
 }
 
@@ -972,7 +997,7 @@ address {
 code,
 pre {
   padding: 0 3px 2px;
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  /* font-family: Monaco, Menlo, Consolas, "Courier New", monospace; */
   font-size: 12px;
   color: #333333;
   -webkit-border-radius: 3px;
@@ -1065,7 +1090,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
 }
 
 label {
@@ -3492,8 +3517,8 @@ input[type="button"].btn-block {
 .btn-info {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #49afcd;
-  *background-color: #2f96b4;
+  background-color: #B5C2B7;
+  *background-color: #B5C2B7;
   background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
   background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
@@ -3513,13 +3538,13 @@ input[type="button"].btn-block {
 .btn-info.disabled,
 .btn-info[disabled] {
   color: #ffffff;
-  background-color: #2f96b4;
+  background-color: #748B75;
   *background-color: #2a85a0;
 }
 
 .btn-info:active,
 .btn-info.active {
-  background-color: #24748c \9;
+  background-color: #B5C2B7 \9;
 }
 
 .btn-inverse {
@@ -6164,4 +6189,9 @@ a.badge:focus {
 
 .affix {
   position: fixed;
+}
+
+.btn.btn-lg.btn-info {
+  background: #B5C2B7;
+  color: #3B3355;
 }
