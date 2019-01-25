@@ -1,26 +1,22 @@
-<h3><%= @trail.name %> - Trail details</h3>
+<h4><%= @trail.name %> - Trail details</h4>
 <br>
-<h3>Length: <%= @trail.length %> miles</h3>
+<h4>Length: <%= @trail.length %> miles</h4>
 <br>
-<h3>Is there a bathroom?: <%= @trail.bathroom %> </h3>
+<h4>Is there a bathroom?: <%= @trail.bathroom %> </h4>
 <br>
-<h3>Is there a cell reception?: <%= @trail.cell_reception %> </h3>
+<h4>Is there a cell reception?: <%= @trail.cell_reception %> </h4>
 <br>
 <br>
-<h3>Category/Categories: </h3>
+<h4>Category/Categories: </h4>
 <% @trail.categories.each do |category| %>
   <ul>  
-    <h4><li><%= category.name %></li></h4>    
+    <p><li><%= category.name %></li></p>    
   </ul>
 <% end %>
 <br>
 <br>
-<<<<<<< HEAD
-<h3>Memo: <%= @trail.memo %></h3><br>
-=======
-<h3>Memo: </h3><p><%= @trail.memo %></p>
+<h4>Memo: </h4><p><%= @trail.memo %></p>
 <br>
->>>>>>> b06993b71631e2a4aa42037f65dad85599eb2b49
 <br>
 <a href="/trails" class="btn btn-lg btn-info link-button">Go back to trails</a>
 <br>

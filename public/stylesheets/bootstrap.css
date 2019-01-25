@@ -12,12 +12,12 @@
   /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
   font-size: 14px;
   line-height: 20px;
-  color: #333333;
   background: url('/images/ep_naturalwhite.png');
 }
 
-h1, h2, h3, h4, label, a, p{
+h1, h2, h3, h4, a, p{
   color: #483519;
+
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -56,6 +56,10 @@ footer {
 
 .flash-message {
   color: #87A388;
+}
+
+.flash-errors {
+  color: #FC7A57;
 }
 /* unvisited link */
 a:link {
@@ -1029,7 +1033,7 @@ address {
   line-height: 20px;
 }
 
-code,
+/* code,
 pre {
   padding: 0 3px 2px;
   /* font-family: Monaco, Menlo, Consolas, "Courier New", monospace; */
@@ -1038,7 +1042,7 @@ pre {
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
-}
+} */
 
 code {
   padding: 2px 4px;
@@ -6176,7 +6180,7 @@ a.badge:focus {
 .carousel-caption p {
   margin-bottom: 0;
 }
-
+/* 
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
@@ -6196,7 +6200,7 @@ a.badge:focus {
   line-height: 1;
   letter-spacing: -1px;
   color: inherit;
-}
+} */
 
 .hero-unit li {
   line-height: 30px;
