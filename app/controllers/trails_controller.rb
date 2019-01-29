@@ -64,12 +64,19 @@ class TrailsController < ApplicationController
     patch '/trails/:slug' do
         redirect_if_not_logged_in
         @trail = Trail.find_by_slug(params[:slug])
+        @original_trail_name = @trail.name.downcase.tr(' ', '-')
+        @new_trail_name = params[:trail][:name].downcase.tr(' ', '-')
 
-        if Trail.all.any?{|trail|trail.name.downcase.tr(' ', '-') == @trail.name.downcase.tr(' ', '-')}
+        if Trail.all.any?{|trail|trail.name.downcase.tr(' ', '-') == @trail.name.downcase.tr(' ', '-')} && @original_trail_name != @new_trail_name
           flash[:errors] = "The trail name is taken. Please pick another name"
           redirect ("/trails/#{@trail.slug}")
         end
-        @trail.update(params[:trail])
+        if @trail && @trail.user == current_user
+            @trail.update(params[:trail])
+        else
+            redirect ("/trails/#{@trail.slug}")
+        end
+       
         @trail.category_ids = params["categories"]
 
         if params["category"]["name"] != "" 
