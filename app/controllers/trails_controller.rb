@@ -16,11 +16,19 @@ class TrailsController < ApplicationController
     post '/trails' do
         if params[:trail][:name] == "" || params[:trail][:length] == ""
             flash[:errors] = "Make sure to fill both name and length fields."
-            redirect :'/trails/new'
+            redirect '/trails/new'
         end
+
+        @slug_name = params[:trail][:name].downcase.tr(' ', '-')
+        if Trail.all.any?{|trail|trail.name.downcase.tr(' ', '-') == @slug_name}
+          flash[:errors] = "The trail name is taken. Please pick another name"
+          redirect '/trails/new'
+        end
+        
         @trail = current_user.trails.create(params[:trail])
         @trails = current_user.trails.all.each{|trail|trail.name}
         @trail.category_ids = params[:categories]
+
         if params["category"]["name"] != "" 
             obj = Category.find_by(name: params[:category][:name]) || Category.create(name: params[:category][:name])
             @trail.categories << obj
