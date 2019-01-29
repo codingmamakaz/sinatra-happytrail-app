@@ -30,7 +30,7 @@ class TrailsController < ApplicationController
         @trail.category_ids = params[:categories]
 
         if params["category"]["name"] != "" 
-            obj = Category.find_by(name: params[:category][:name]) || Category.create(name: params[:category][:name])
+            obj = Category.find_or_create_by(name: params[:category][:name]) 
             @trail.categories << obj
         end
         @trail.save
@@ -80,7 +80,7 @@ class TrailsController < ApplicationController
         @trail.category_ids = params["categories"]
 
         if params["category"]["name"] != "" 
-            obj = Category.find_by(name: params[:category][:name]) || Category.create(name: params[:category][:name])
+            obj = Category.find_or_create_by(name: params[:category][:name]) 
             @trail.categories << obj
         end
         @trail.save
