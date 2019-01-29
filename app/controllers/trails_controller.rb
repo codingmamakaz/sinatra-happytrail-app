@@ -24,7 +24,7 @@ class TrailsController < ApplicationController
           flash[:errors] = "The trail name is taken. Please pick another name"
           redirect '/trails/new'
         end
-        
+
         @trail = current_user.trails.create(params[:trail])
         @trails = current_user.trails.all.each{|trail|trail.name}
         @trail.category_ids = params[:categories]
@@ -64,6 +64,11 @@ class TrailsController < ApplicationController
     patch '/trails/:slug' do
         redirect_if_not_logged_in
         @trail = Trail.find_by_slug(params[:slug])
+        
+        if Trail.all.any?{|trail|trail.name.downcase.tr(' ', '-') == @trail.name}
+          flash[:errors] = "The trail name is taken. Please pick another name"
+          redirect ("/trails/#{@trail.slug}")
+        end
         @trail.update(params[:trail])
         @trail.category_ids = params["categories"]
 
