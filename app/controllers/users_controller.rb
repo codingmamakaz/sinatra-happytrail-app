@@ -64,6 +64,13 @@ class UsersController < ApplicationController
         redirect '/user/edit'
       end
       @user = User.find_by(:id => session[:user_id])
+      @original_user_name = @user.username
+      @new_user_name = params[:user][:username]
+
+      if User.all.any?{|user|user.username == @new_user_name} && @original_user_name != @new_user_name
+        flash[:errors] = "The name is taken. Please pick another name"
+        redirect '/user/edit'
+      end
       @user.update(params[:user])
       @user.save
       redirect '/user'

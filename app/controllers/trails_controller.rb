@@ -67,7 +67,7 @@ class TrailsController < ApplicationController
         @original_trail_name = @trail.name.downcase.tr(' ', '-')
         @new_trail_name = params[:trail][:name].downcase.tr(' ', '-')
 
-        if Trail.all.any?{|trail|trail.name.downcase.tr(' ', '-') == @trail.name.downcase.tr(' ', '-')} && @original_trail_name != @new_trail_name
+        if Trail.all.any?{|trail|trail.name.downcase.tr(' ', '-') == @new_trail_name} && @original_trail_name != @new_trail_name
           flash[:errors] = "The trail name is taken. Please pick another name"
           redirect ("/trails/#{@trail.slug}")
         end
