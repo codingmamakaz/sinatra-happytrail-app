@@ -14,8 +14,7 @@ class UsersController < ApplicationController
           redirect '/signup'
         elsif
           @userobj = User.find_by(:username => params[:user][:username])
-          @username = @userobj.username
-          if User.all.any?{|user|user.username == @username}
+          if @userobj != nil
           flash[:errors] = "The username is taken. Please pick another name"
           redirect '/signup'
           end
