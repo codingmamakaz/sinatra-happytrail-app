@@ -12,7 +12,8 @@ gem 'bcrypt'
 gem "tux"
 gem 'sinatra-flash'
 
-gem 'pg', :group => :production
+gem 'pg', '~> 0.21', :group => :production
+# gem 'pg', :group => :production
 gem 'sqlite3', :group => :development
 
 group :test do
