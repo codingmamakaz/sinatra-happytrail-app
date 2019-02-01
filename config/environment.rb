@@ -22,7 +22,6 @@ configure :production do
     :encoding => 'utf8'
   )
 end
-
 require_all 'app'
 
 
