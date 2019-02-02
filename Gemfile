@@ -12,7 +12,7 @@ gem 'bcrypt'
 gem "tux"
 gem 'sinatra-flash'
 gem 'rack'
-gem 'pg', '~> 0.11'
+gem 'pg', '~> 0.20.0'
 
 group :test do
   gem 'rspec'
