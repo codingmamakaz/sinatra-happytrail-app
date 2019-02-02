@@ -1,9 +1,14 @@
+
 development:
-  adapter: sqlite3
+  adapter: postgresql
   encoding: unicode
-  database: db/development.sqlite3
-  pool: 5
+  database: kazumikarbowski
+  pool: 2
+  
+
 production:
   adapter: postgresql
   encoding: unicode
-  pool: 5
+  database: kazumikarbowski
+  pool: 2
+  

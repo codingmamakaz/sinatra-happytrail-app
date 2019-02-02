@@ -1,4 +1,11 @@
 require './config/environment'
+configure :development do
+  set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'kazumikarbowski', pool: 2}
+end
+
+configure :production do
+  set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'kazumikarbowski', pool: 2}
+end
 
 class ApplicationController < Sinatra::Base
 

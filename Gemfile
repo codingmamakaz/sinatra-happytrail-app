@@ -12,15 +12,7 @@ gem 'bcrypt'
 gem "tux"
 gem 'sinatra-flash'
 gem 'rack'
-gem 'pg', '~> 1.1.4'
-
-group :development do
-  gem 'sqlite3'
-end
- 
-group :production do
-  gem 'pg', '~> 1.1.4'
-end
+gem 'pg', '~> 0.20.0'
 
 group :test do
   gem 'rspec'
