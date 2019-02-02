@@ -6,8 +6,9 @@ end
 
 use Rack::MethodOverride
 
-
 run ApplicationController
 use UsersController
 use TrailsController
 use CategoriesController
+
+run Sinatra::Application
