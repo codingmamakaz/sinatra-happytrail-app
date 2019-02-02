@@ -1,14 +1,37 @@
 
 development:
-  adapter: postgresql
-  encoding: unicode
-  database: kazumikarbowski
-  pool: 2
+    adapter: postgresql
+    database: happytrails
+    pool: 5
+    host: localhost
+    timeout: 5000
   
-
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: kazumikarbowski
-  pool: 2
+   adapter: postgresql
+   database: happytrails_pro
+   pool: 5
+   timeout: 5000
+
+default: &default
+  host: localhost
+# production:
+#   database: happytrails
+#   adapter: postgresql
+#   host: localhost
+ 
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   username: kazumikarbowski
+#   pool: 2
+
+# development:
+#   <<: *default
+#   database: happytrails
+
+# production:
+#   <<: *default
+#   database: happytrails
+#   username: kazumikarbowski
+#   pool: 2
   
