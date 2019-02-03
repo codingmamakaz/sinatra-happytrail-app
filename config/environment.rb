@@ -18,7 +18,7 @@ configure :development do
   )
 end
 configure :production do
-  db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/happytrails_pro')
+  db = URI.parse(ENV['DATABASE_URL'] || 'postgres://HEROKU_POSTGRESQL_AQUA_URL')
  
   ActiveRecord::Base.establish_connection(
     :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
