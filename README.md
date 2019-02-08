@@ -4,6 +4,7 @@ Users can view trails, lengths and other details of trails.
 
 ## Usage
 To use this app, just clone, run `bundle install`, `rake db:migrate`, `rake db:seed` and then run `shotgun`. Everything should be set up.
+OR, you can simply visit [here](https://sinatra-happy-trails.herokuapp.com/)
 
 ## Contributing Bugfixes or Features
 To add a feature or report a bug, please submit a PR.
